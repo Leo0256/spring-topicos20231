@@ -5,6 +5,7 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 ports:
   - port: 8080
+    visibility: public
 tasks:
   - init: ./mvnw install -DskipTests=false
 
