@@ -8,5 +8,4 @@ ports:
     visibility: public
 tasks:
   - init: ./mvnw install -DskipTests=false
-
-
+image: gitpod/workspace-mysql
