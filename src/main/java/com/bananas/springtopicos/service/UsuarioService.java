@@ -1,8 +1,9 @@
 package com.bananas.springtopicos.service;
 
-import java.*;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import com.bananas.springtopicos.entity.Usuario;
 import com.bananas.springtopicos.repository.UsuarioRepository;
 
