@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.bananas.springtopicos.entity.Usuario;
+import com.bananas.springtopicos.exception.UsuarioNaoEncontrado;
 import com.bananas.springtopicos.repository.UsuarioRepository;
 
 @Service
@@ -19,7 +20,7 @@ public class UsuarioService implements IUsuarioService {
             || usuario.getNome() == null
             || usuario.getSenha() == null
         ) {
-            throw new IllegalArgumentException("deu ruim");
+            throw new UsuarioNaoEncontrado("deu ruim");
         }
 
         return usuarioRepository.save(usuario);
@@ -33,7 +34,7 @@ public class UsuarioService implements IUsuarioService {
         Optional<Usuario> usuarioOp = usuarioRepository.findById(id);
 
         if(usuarioOp.isEmpty()) {
-            throw new IllegalArgumentException("Usuário não existe");
+            throw new UsuarioNaoEncontrado("Usuário não existe");
         }
         return usuarioOp.get();
     }
