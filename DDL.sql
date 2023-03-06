@@ -1,12 +1,12 @@
-create schema anotacao;
+create schema if not exists anotacao;
 
 use anotacao;
 
-create user 'user'@'localhost' identified by 'pass123';
+create user if not exists 'user'@'localhost' identified by 'pass123';
 
 grant select, insert, delete, update on anotacao.* to user@'localhost';
 
-create table usr_usuario (
+create table if not exists usr_usuario (
   usr_id bigint unsigned not null auto_increment,
   usr_nome varchar(20) not null,
   usr_senha varchar(15
