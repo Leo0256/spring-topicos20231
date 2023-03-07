@@ -13,3 +13,12 @@ create table if not exists usr_usuario (
   primary key (usr_id),
   unique key uni_usuario_nome (usr_nome)
 );
+
+create table if not exists usr_descricao (
+  usr_desc_id bigint unsigned auto_increment primary key,
+  usr_id bigint unsigned not null,
+  usr_endereco varchar(255),
+  usr_frase varchar(255) default "frase de efeito!",
+  constraint usr_usuario_descricao foreign key (usr_id)
+  references usr_usuario(usr_id)
+);

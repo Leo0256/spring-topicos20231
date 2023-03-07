@@ -8,9 +8,10 @@ import org.springframework.stereotype.Service;
 import com.bananas.springtopicos.entity.Usuario;
 import com.bananas.springtopicos.exception.UsuarioNaoEncontrado;
 import com.bananas.springtopicos.repository.UsuarioRepository;
+import com.bananas.springtopicos.service.interfaces.UsuarioInterface;
 
 @Service
-public class UsuarioService implements IUsuarioService {
+public class UsuarioService implements UsuarioInterface {
     
     @Autowired
     private UsuarioRepository usuarioRepository;

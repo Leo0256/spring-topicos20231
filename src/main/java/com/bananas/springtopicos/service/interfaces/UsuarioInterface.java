@@ -1,10 +1,10 @@
-package com.bananas.springtopicos.service;
+package com.bananas.springtopicos.service.interfaces;
 
 import java.util.List;
 
 import com.bananas.springtopicos.entity.Usuario;
 
-public interface IUsuarioService {
+public interface UsuarioInterface {
     public Usuario novoUsuario(Usuario usuario);
 
     public List<Usuario> buscarTodosUsuarios();
