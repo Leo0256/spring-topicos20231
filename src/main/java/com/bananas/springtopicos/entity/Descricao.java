@@ -20,7 +20,7 @@ public class Descricao {
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL, targetEntity = Usuario.class)
-    @JoinColumn(name = "usr_id")
+    @JoinColumn(name = "usr_id", referencedColumnName = "usr_id")
     private Long usr_id;
 
     @Column(name = "usr_endereco")
@@ -30,9 +30,9 @@ public class Descricao {
     private String frase;
 
     public Descricao(Long usr_id ,String endereco ,String frase) {
-        this.usr_id = usr_id;
-        this.endereco = endereco;
-        this.frase = frase;
+        setUsr_id(usr_id);
+        setEndereco(endereco);
+        setFrase(frase);
     }
 
     public Descricao() {
